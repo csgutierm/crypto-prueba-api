@@ -5,6 +5,7 @@ import com.csgm.cryptoprueba.model.client.RetrofitClient
 import com.csgm.cryptoprueba.model.remote.CryptoAPI
 import retrofit2.HttpException
 import java.io.IOException
+import java.util.*
 
 class Repository {
 
@@ -51,4 +52,9 @@ class Repository {
             throw e
         }
     }
+
+    fun getImageFromSymbol(symbol: String) =
+        "https://static.coincap.io/assets/icons/${symbol.lowercase(Locale.ROOT)}@2x.png"
+
+
 }
